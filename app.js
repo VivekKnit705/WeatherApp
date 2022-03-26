@@ -25,26 +25,35 @@ setInterval(() => {
   console.log(ampm);
   timeEl.innerHTML = (hoursIn12HrFormate < 10 ? '0' + hoursIn12HrFormate : hoursIn12HrFormate) + ' : ' + (minute < 10 ? '0' + minute : minute) + `<span id="am-pm">${ampm}</span>`
   dateEl.innerHTML = days[day] + ',' + date + ' ' + months[month];
-  if (hour > 19 && hour < 4) {
+  if (hour >= 19 && hour <= 23) {
     body.style.background = "url('https://source.unsplash.com/random/900×700/?night')";
     body.style.backgroundRepeat = "no-repeat";
     body.style.backgroundSize = "cover";
 
+
   }
-  else if (hour > 4 && hour < 10) {
+  else if (hour >= 1 && hour < 4) {
+    body.style.background = "url('https://source.unsplash.com/random/900×700/?midnight')";
+    body.style.backgroundRepeat = "no-repeat";
+    body.style.backgroundSize = "cover";
+
+
+  }
+
+  else if (hour >= 4 && hour < 10) {
     body.style.background = "url('https://source.unsplash.com/random/900×700/?sunset')";
     body.style.backgroundRepeat = "no-repeat";
     body.style.backgroundSize = "cover";
 
   }
-  else if (hour > 10 && hour < 16) {
+  else if (hour >= 10 && hour < 16) {
     body.style.background = "url('https://source.unsplash.com/random/900×700/?afternoon')";
     body.style.backgroundRepeat = "no-repeat";
     body.style.backgroundSize = "cover";
 
 
   }
-  else if (hour > 16 && hour < 19) {
+  else if (hour >= 16 && hour < 19) {
     body.style.background = "url('https://source.unsplash.com/random/900×700/?sunset')";
     body.style.backgroundRepeat = "no-repeat";
     body.style.backgroundSize = "cover";
